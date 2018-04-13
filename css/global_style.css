@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-button {
+    border: none;
+    background: #484848;
+    margin: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #
+}
+
+@keyframes login-background-fade {
+    0% {
+        display: none;
+    }
+    50% {
+        display: flex;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-background {
+    display: none;
+    flex-flow: column nowrap;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+}
