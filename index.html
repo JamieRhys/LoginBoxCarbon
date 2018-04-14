@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/global_style.css">
     <title>Login Box Carbon</title>
-    <script src="js/global_jsript.js"></script>
+    <script src="js/global_script.js" defer></script>
 </head>
 <body>
     <button id="loginButton" class="login-button">Login</button>
     <div id="loginBackground" class="login-background">
-
+        <div id="loginBox" class="login-box-inactive">
+            <div class="login-title-bar">
+                <div id="loginTitleContainer" class="login-title-container">
+                    <p>Login</p>
+                </div>
+                <div id="loginCloseButtonContainer" class="login-close-button-container">
+                    <p id="loginCloseButton">&times;</p>
+                </div>
+            </div>
+            <div class="login-content-container">
+            </div>
+        </div>
     </div>
 </body>
 </html>

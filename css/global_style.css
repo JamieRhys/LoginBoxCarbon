@@ -3,26 +3,33 @@ html, body {
     padding: 0;
 }
 
+@keyframes login-box-resize {
+    0% {
+        width: 150px;
+        height: 150px;
+    }
+    100% {
+        width: 350px;
+        height: 300px;
+    }
+}
+
+@keyframes opac-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .login-button {
     border: none;
     background: #484848;
+    color: #cacaca;
     margin: 5px;
     padding: 10px;
     text-transform: uppercase;
-    color: #
 }
 
-@keyframes login-background-fade {
-    0% {
-        display: none;
-    }
-    50% {
-        display: flex;
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.login-button:hover {
+    background: #004014;
 }
 
 .login-background {
@@ -32,8 +39,65 @@ html, body {
     opacity: 0;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: -1;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.4);
+    animation: opac-fade 2s linear 0s 1 forwards;
+}
+
+.login-box-active, .login-box-inactive {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(#000, rgba(0, 0, 0, 0.1), transparent),
+        url("../images/carbonFibre.jpg");
+    /*animation: login-box-resize 2s ease-in-out 0s 1 forwards;*/
+    transition: width 1s, height 1s ease-in-out 0s;
+}
+
+.login-box-active {
+    width: 350px;
+    height: 300px;
+    transition: width 1s, height 1s ease-in-out 0.5s;
+    /*animation: login-box-resize 2s ease-in-out 0s 1 reverse;*/
+}
+
+.login-title-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 2px solid #2b2b2b;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(#000, #262626, #000);
+}
+
+.login-title-container {
+    padding: 5px 5px 5px 10px;
+}
+
+.login-close-button-container {
+    padding: 5px 10px 5px 5px;
+    border-left: 2px solid #2b2b2b;
+}
+
+.login-title-container p,
+.login-close-button-container p {
+    color: #b6b6b6;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+}
+
+.login-close-button-container p {
+    cursor: pointer;
+}
+
+.login-content-container {
+    /*border: 1px solid green;*/
 }
